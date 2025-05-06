@@ -14,3 +14,5 @@ To start a rabbitmq node in the background: `brew services start rabbitmq`
 RabbitMQ should now be running and available to manage at http://localhost:15672
 <br>
 If it's not, you can find the Management UI URL with `brew info rabbitmq`
+<br>
+Default username/password: `guest/guest`
