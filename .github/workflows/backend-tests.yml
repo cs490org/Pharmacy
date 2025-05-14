@@ -3,12 +3,8 @@ name: Backend Tests
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'backend/**'
   pull_request:
     branches: [ main ]
-    paths:
-      - 'backend/**'
 
 jobs:
   test:
@@ -25,7 +21,7 @@ jobs:
           cache: 'maven'
 
       - name: Build with Maven
-        working-directory: ./backend
+        working-directory: ./
         run: ./mvnw clean test
 
       - name: Upload test results
