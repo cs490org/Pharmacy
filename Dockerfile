@@ -8,7 +8,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Stage 2: Create the runtime image using Eclipse Temurin Java 21
-FROM eclipse-temurin:21-jdk-alpine
+FROM eclipse-temurin:21-jdk
 WORKDIR /app
 # Copy the built JAR from the build stage
 COPY --from=build /app/target/group4-0.0.1-SNAPSHOT.jar group4-0.0.1-SNAPSHOT.jar
