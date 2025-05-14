@@ -12,6 +12,8 @@ FROM eclipse-temurin:21-jdk-alpine
 WORKDIR /app
 # Copy the built JAR from the build stage
 COPY --from=build /app/target/group4-0.0.1-SNAPSHOT.jar group4-0.0.1-SNAPSHOT.jar
+COPY --from=build /app/src/main/resources/.env .env
+
 EXPOSE 8081
 # Set the entrypoint to run the Spring Boot application
 ENTRYPOINT ["java", "-jar", "group4-0.0.1-SNAPSHOT.jar"]
