@@ -49,6 +49,11 @@ public class PharmacyController {
         return ResponseEntity.ok(pharmacyService.createPharmacy(pharmacyCreateDTO));
     }
 
+    @PatchMapping
+    private ResponseEntity<?> updatePharmacy(@RequestBody PharmacyCreateDTO pharmacyCreateDTO) {
+        return ResponseEntity.ok(pharmacyService.updatePharmacy(pharmacyCreateDTO));
+    }
+
     @GetMapping("/drugs")
     private ResponseEntity<?> getDrugs(@RequestParam Integer pharmacyId) {
         return ResponseEntity.ok(pharmacyService.getDrugsByPharmacy(pharmacyId));

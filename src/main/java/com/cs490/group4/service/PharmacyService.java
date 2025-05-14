@@ -62,6 +62,21 @@ public class PharmacyService {
         return pharmacyRepository.save(pharmacy);
     }
 
+    @Transactional
+    public Pharmacy updatePharmacy(PharmacyCreateDTO pharmacyCreateDTO) {
+        User user = userRepository.findById(pharmacyCreateDTO.getUserId()).orElseThrow(
+                ()-> new EntityNotFoundException("User Not Found"));
+
+        Pharmacy pharmacy = pharmacyRepository.findByUserId(user.getUserId());
+        pharmacy.setName(pharmacyCreateDTO.getName());
+        pharmacy.setZipCode(pharmacyCreateDTO.getZipCode());
+        pharmacy.setPhone(pharmacyCreateDTO.getPhone());
+        pharmacy.setAddress(pharmacyCreateDTO.getAddress());
+
+        return pharmacyRepository.save(pharmacy);
+    }
+
+
     public boolean isEmpty() {
         return pharmacyRepository.count() == 0;
     }
