@@ -56,6 +56,13 @@
 			<version>5.2.2</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.google.cloud/spring-cloud-gcp-starter-sql-mysql -->
+		<dependency>
+			<groupId>com.google.cloud</groupId>
+			<artifactId>spring-cloud-gcp-starter-sql-mysql</artifactId>
+			<version>6.1.1</version>
+		</dependency>
+
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-api</artifactId>
