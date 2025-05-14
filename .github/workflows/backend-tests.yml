@@ -21,7 +21,7 @@ jobs:
           cache: 'maven'
 
       - name: Build with Maven
-        working-directory: ./backend
+        working-directory: ./
         run: ./mvnw clean test
 
       - name: Upload test results
